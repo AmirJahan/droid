@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/topButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="topButtonFun"
+        android:text="Top Button" />
+
+    <Button
+        android:id="@+id/midButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:text="Middle Button" />
+
+    <Button
+        android:id="@+id/botButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:text="Bottom Button" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+</LinearLayout>
