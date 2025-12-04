@@ -26,7 +26,7 @@ fun test ()
 
 
     // let's assume we read data from a server
-    val data: HashMap<String, Any> = hashMapOf("name" to "Ford",
+    val data: HashMap<String, Any?> = hashMapOf("name" to "Ford",
                                                "color" to "Red",
                                                "tires" to 6,
                                                "cylinders" to 4,

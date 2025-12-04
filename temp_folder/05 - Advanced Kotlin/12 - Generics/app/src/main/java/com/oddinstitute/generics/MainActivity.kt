@@ -18,16 +18,16 @@ class Cat (val age: Int)
 
 class GenericsClass<T>(input: T)
 {
-//    init
-//    {
-//        println("I am getting called with the value $input")
-//
-//        if (input is String)
-//        {
-//
-//        }
-//
-//    }
+    init
+    {
+        println("I am getting called with the value $input")
+
+        if (input is String)
+        {
+
+        }
+
+    }
 }
 
 class MainActivity : AppCompatActivity()

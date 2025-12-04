@@ -27,6 +27,11 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
 
 
+        AppData.score += 1
+
+        Vehicle.mileage = 30_000
+
+
         val usr = User("Amir", "amir@gmail.com", UUID.randomUUID())
 
         Log.d("MainActivity", usr.email)

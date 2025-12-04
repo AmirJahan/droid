@@ -5,7 +5,7 @@ import android.util.Log
 fun MainActivity.optionals ()
 {
     var a: String = "test" // non-nullable variable
-    a = null // error
+//    a = null // error
     a = ""
 
 
@@ -16,7 +16,7 @@ fun MainActivity.optionals ()
     b = null // ok
 
     val aLength: Int = a.length
-    val bLength: Int = b.length // error
+//    val bLength: Int = b.length // error
 
     val bLength2: Int = if (b != null) b.length else 0
 
@@ -36,19 +36,8 @@ fun MainActivity.optionals ()
         Log.d("Tag", item!!) // force unwrap the nullable
     }
 
-    for (item: String? in listWithNulls)
+    for (item: String? in listWithNulls){
 
         Log.d ("tag", item ?: "")
     }
-
-
-
-
-
-
-
-
-
-
-
 }
