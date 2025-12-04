@@ -8,10 +8,12 @@ import androidx.core.view.WindowInsetsCompat
 
 
 // default class type is final, cannot be extended
-open class Property
+abstract class Property
 {
     val address: String = ""
-    open fun setOpenHouse () { } // open functions can be overriden
+    open fun setOpenHouse () { } // open functions can be overridden
+
+    abstract fun test () // no body, only declration
 
     open var ready: Boolean = false
 }
@@ -23,6 +25,11 @@ class Sales () : Property ()
     {
         super.setOpenHouse()
     }
+
+    override fun test()
+    {
+        TODO("Not yet implemented")
+    }
 }
 
 class Rentals () : Property ()
@@ -31,6 +38,11 @@ class Rentals () : Property ()
     override fun setOpenHouse()
     {
         super.setOpenHouse()
+    }
+
+    override fun test()
+    {
+        TODO("Not yet implemented")
     }
 }
 
