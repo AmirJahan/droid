@@ -9,7 +9,6 @@ import androidx.core.view.WindowInsetsCompat
 import java.util.UUID
 
 
-
 class CloudOps()
 {
     fun fetchIms()
@@ -28,7 +27,7 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
 
 
-        val usr = User ("Amir", "amir@gmail.com", UUID.randomUUID())
+        val usr = User("Amir", "amir@gmail.com", UUID.randomUUID())
 
         Log.d("MainActivity", usr.email)
 
