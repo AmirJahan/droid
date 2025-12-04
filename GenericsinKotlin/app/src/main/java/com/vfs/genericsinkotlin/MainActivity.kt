@@ -1,4 +1,4 @@
-package com.vfs.enumsinkotlin
+package com.vfs.genericsinkotlin
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,38 +6,31 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+class Dog (val age: Int)
+class Cat (val age: Int)
 
-enum class SomeEnum (val someArg: String)
+
+class Vet<T> (input: T)
 {
-    LEFT ("a"),
-    RIGHT ("b"),
-    UP ("c"),
-    DOWN ("d")
-}
-
-enum class Keyboard (val dir: Int)
-{
-    LEFT (1),
-    RIGHT (2),
-    UP (3),
-    DOWN (4)
-}
-fun test ()
-{
-    val k = Keyboard.LEFT
-    val kDir: Int = k.dir
-
-    val dir = Direction.NORTH
-
-    if (dir == Direction.NORTH)
+    init
     {
-        println("North")
+        if (input is String)
+        {
+
+        }
+        else if (input == Dog::class.java)
+        {
+
+        }
     }
 }
 
-enum class Direction
+fun test ()
 {
-    NORTH, SOUTH, EAST, WEST
+    val obj1 = Vet<String>("")
+    val obj2 = Vet<Dog>(Dog(1))
+    val obj3 = Vet<Cat>(Cat(1))
+
 }
 
 
