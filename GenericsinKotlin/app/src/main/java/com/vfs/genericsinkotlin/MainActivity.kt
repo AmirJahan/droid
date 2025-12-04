@@ -34,6 +34,19 @@ fun test ()
 }
 
 
+fun testConversion ()
+{
+    val value1 = 10
+    val value2: Long = value1.toLong()
+    val value3: Short = value1.toShort()
+    val value4: Byte = value1.toByte()
+    val value5: Double = value1.toDouble()
+    val value6: Float = value1.toFloat()
+    val value7: Int = value1.toInt()
+    val value8: String = value1.toString()
+    val value9: Char = value1.toChar()
+}
+
 
 
 
