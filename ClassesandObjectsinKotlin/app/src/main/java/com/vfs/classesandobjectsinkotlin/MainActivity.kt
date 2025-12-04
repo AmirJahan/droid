@@ -23,7 +23,33 @@ class MainActivity : AppCompatActivity()
     }
 }
 
+// fun name (arg1; art1Type, arg2: arg2Type, ...): returnType { }
+
+fun validateEmail (email: String): Boolean
+{
+    return email.contains("@")
+}
+
+fun validateEmailAndReturn (email: String): Pair<String, Boolean> // tuple
+{
+    return Pair(email,
+                email.contains("@"))
+}
+
 class User (var displayName: String, val email: String, val id: UUID)
+{
+    fun printName ()
+    {
+        Log.d("User", displayName)
+    }
+
+    fun fetchEmail () : String
+    {
+        return email
+    }
+}
+
+// void printName() { }
 
 
 
