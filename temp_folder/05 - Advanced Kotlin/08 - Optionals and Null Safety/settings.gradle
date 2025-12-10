@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name='Optionals and Null Safety'
