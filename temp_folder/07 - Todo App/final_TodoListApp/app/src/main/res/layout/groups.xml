@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GroupsActivity" >
+
+    <Button
+        android:id="@+id/newListButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_weight="0"
+        android:background="#F1F1F1"
+        android:gravity="center"
+        android:onClick="createNewGroup"
+        android:paddingStart="20dp"
+        android:text="+New List"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#2196F3"
+        android:textSize="20sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/groupsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
