@@ -8,15 +8,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity()
+class MainActivity : AppCompatActivity(), OnFragmentInteractionsListener
 {
+    override fun detachButtonTapped()
+    {
+        supportFragmentManager.findFragmentByTag("myFragTag")?.let {
+            supportFragmentManager
+                .beginTransaction()
+                .remove(it)
+                .commit()
+        }
+    }
+    lateinit var loadFragButton: Button
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val loadFragButton = findViewById<Button>(R.id.loadFragButton_id)
+        loadFragButton = findViewById<Button>(R.id.loadFragButton_id)
         loadFragButton.setOnClickListener {
 
             supportFragmentManager
@@ -30,11 +40,6 @@ class MainActivity : AppCompatActivity()
 
     fun removeFragment (v: View)
     {
-        supportFragmentManager.findFragmentByTag("myFragTag")?.let {
-            supportFragmentManager
-                .beginTransaction()
-                .remove(it)
-                .commit()
-        }
+
     }
 }
