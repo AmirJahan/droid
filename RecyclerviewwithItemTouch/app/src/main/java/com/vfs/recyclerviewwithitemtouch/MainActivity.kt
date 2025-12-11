@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), ItemListener
     override fun itemClicked(index: Int)
     {
         Toast.makeText(this,
-                       "Object at index $index clicked",
+                       "name ${AppData.names[index]} was clicked",
                        Toast.LENGTH_LONG).show()
     }
 }
@@ -51,7 +51,7 @@ class MyAdapter (var listener: ItemListener): RecyclerView.Adapter<MyViewHolder>
     override fun onBindViewHolder(holder: MyViewHolder,
                                   position: Int) // on Attach
     {
-        holder.textView.text = "Name $position"
+        holder.textView.text = AppData.names[position]
 
         holder.itemView.setOnClickListener {
             // somehow, we have send a message to that listener
@@ -64,7 +64,7 @@ class MyAdapter (var listener: ItemListener): RecyclerView.Adapter<MyViewHolder>
         }
     }
 
-    override fun getItemCount(): Int = 20 //
+    override fun getItemCount(): Int = AppData.names.count()
 }
 
 interface ItemListener
