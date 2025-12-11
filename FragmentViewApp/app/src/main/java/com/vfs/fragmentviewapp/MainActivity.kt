@@ -1,6 +1,7 @@
 package com.vfs.fragmentviewapp
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,10 +22,19 @@ class MainActivity : AppCompatActivity()
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.fragmentViewContainer_id,
-                     /* my fragment */,
+                     MyFragment(),
                      "myFragTag")
                 .commit()
         }
+    }
 
+    fun removeFragment (v: View)
+    {
+        supportFragmentManager.findFragmentByTag("myFragTag")?.let {
+            supportFragmentManager
+                .beginTransaction()
+                .remove(it)
+                .commit()
+        }
     }
 }

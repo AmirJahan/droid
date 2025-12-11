@@ -13,7 +13,11 @@ class MyFragment: Fragment()
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View?
     {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val fragView = inflater.inflate(R.layout.my_fragment_layout,
+                                        container,
+                                        false)
+
+        return fragView
     }
 
     override fun onAttach(context: Context)

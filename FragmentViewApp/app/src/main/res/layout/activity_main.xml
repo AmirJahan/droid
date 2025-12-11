@@ -30,4 +30,15 @@
         app:layout_constraintEnd_toEndOf="@+id/fragmentViewContainer_id"
         app:layout_constraintStart_toStartOf="@+id/fragmentViewContainer_id"
         app:layout_constraintTop_toBottomOf="@+id/fragmentViewContainer_id" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="removeFragment"
+        android:text="Detach Fragment"
+        app:layout_constraintEnd_toEndOf="@+id/loadFragButton_id"
+        app:layout_constraintStart_toStartOf="@+id/loadFragButton_id"
+        app:layout_constraintTop_toBottomOf="@+id/loadFragButton_id" />
 </androidx.constraintlayout.widget.ConstraintLayout>
