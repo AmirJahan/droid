@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".TasksActivity"
+            android:exported="false" />
+        <activity
             android:name=".GroupsActivity"
             android:exported="true">
             <intent-filter>

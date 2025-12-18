@@ -1,5 +1,6 @@
 package com.vfs.mytaskapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,7 +28,7 @@ import androidx.recyclerview.widget.RecyclerView
     // I can stroke off an item
     // I can go back to the Home page
 
-class GroupsActivity : AppCompatActivity()
+class GroupsActivity : AppCompatActivity(), GroupListener
 {
     lateinit var groupAdapter: GroupsAdapter
     override fun onCreate(savedInstanceState: Bundle?)
@@ -41,7 +42,7 @@ class GroupsActivity : AppCompatActivity()
         val groupsRv = findViewById<RecyclerView>(R.id.groupsRv_id)
         groupsRv.layoutManager = LinearLayoutManager(this)
 
-        groupAdapter = GroupsAdapter()
+        groupAdapter = GroupsAdapter(this)
         groupsRv.adapter = groupAdapter
     }
 
@@ -66,6 +67,19 @@ class GroupsActivity : AppCompatActivity()
 
         val dialog = builder.create()
         dialog.show()
+    }
+
+    override fun groupLongClicked(index: Int)
+    {
+        AppData.groups.removeAt(index)
+        groupAdapter.notifyDataSetChanged()
+    }
+
+    override fun groupClicked(index: Int)
+    {
+        val intent = Intent (this, TasksActivity::class.java)
+        intent.putExtra("index", index) // send the index to the next activity
+        startActivity(intent)
     }
 }
 
