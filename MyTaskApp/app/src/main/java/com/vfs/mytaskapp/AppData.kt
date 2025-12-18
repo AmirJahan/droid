@@ -1,9 +1,9 @@
 package com.vfs.mytaskapp
-data class Item (val name: String,
+data class Task (val name: String,
                  var completed: Boolean)
 
 data class Group (val name: String,
-                  var items: MutableList<Item>)
+                  var tasks: MutableList<Task>)
 
 class AppData
 {
