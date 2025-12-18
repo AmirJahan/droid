@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class TasksActivity : AppCompatActivity(), TaskListener
 {
+    lateinit var thisGroup: Group
+    lateinit var tasksAdapter: TasksAdapter
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -18,7 +21,7 @@ class TasksActivity : AppCompatActivity(), TaskListener
         setContentView(R.layout.tasks_layout)
 
         val index = intent.getIntExtra("index", 0)
-        val thisGroup = AppData.groups[index]
+        thisGroup = AppData.groups[index]
 
 
         val grpTextView = findViewById<TextView>(R.id.grpNameTextView_id)
@@ -26,7 +29,9 @@ class TasksActivity : AppCompatActivity(), TaskListener
 
         val tasksRv = findViewById<RecyclerView>(R.id.tasksRv_id)
         tasksRv.layoutManager = LinearLayoutManager(this)
-        tasksRv.adapter = TasksAdapter (this, thisGroup)
+
+        tasksAdapter = TasksAdapter (this, thisGroup)
+        tasksRv.adapter = tasksAdapter
 
 
 
@@ -39,6 +44,7 @@ class TasksActivity : AppCompatActivity(), TaskListener
 
     override fun taskClicked(index: Int)
     {
-
+        thisGroup.tasks[index].completed = !thisGroup.tasks[index].completed
+        tasksAdapter.notifyDataSetChanged()
     }
 }

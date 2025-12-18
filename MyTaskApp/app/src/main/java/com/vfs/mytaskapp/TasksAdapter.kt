@@ -1,5 +1,7 @@
 package com.vfs.mytaskapp
 
+import android.graphics.Color
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,10 +28,24 @@ class TasksViewHolder (rootView: LinearLayout): RecyclerView.ViewHolder(rootView
     {
         taskNameTextView.text = task.name
         taskCompletedCheckBox.isChecked = task.completed
-
+        if (task.completed)
+        {
+            taskNameTextView.paintFlags = taskNameTextView.paintFlags or
+                    Paint.STRIKE_THRU_TEXT_FLAG
+            itemView.setBackgroundColor(Color.GRAY)
+        }
+        else
+        {
+            taskNameTextView.paintFlags = taskNameTextView.paintFlags and
+                    Paint.STRIKE_THRU_TEXT_FLAG.inv()
+            itemView.setBackgroundColor(Color.TRANSPARENT)
+        }
         taskDividerView.visibility = View.VISIBLE
         if (hideDivider)
             taskDividerView.visibility = View.GONE
+
+
+
     }
 }
 
