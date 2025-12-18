@@ -36,11 +36,9 @@
         android:textColor="#626262" />
 
     <View
-        android:id="@+id/view2"
+        android:id="@+id/dividerView_id"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_height="2dp"
         android:layout_weight="0"
         android:background="#FF5722" />
 </LinearLayout>
