@@ -32,6 +32,8 @@ class GroupsActivity : AppCompatActivity()
         enableEdgeToEdge()
         setContentView(R.layout.groups_layout)
 
+        AppData.initialize()
+
         val groupsRv = findViewById<RecyclerView>(R.id.groupsRv_id)
         groupsRv.layoutManager = LinearLayoutManager(this)
         groupsRv.adapter = GroupsAdapter()
