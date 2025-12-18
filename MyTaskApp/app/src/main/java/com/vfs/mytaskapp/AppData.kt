@@ -23,7 +23,7 @@ class AppData
             val task_8 = Task("Buy Drinks", false)
 
 
-            val group_1 = Group ("Home", mutableListOf(task_1, task_2))
+            val group_1 = Group ("Home", mutableListOf(task_1, task_2, task_3, task_4, task_5, task_6))
             val group_2 = Group ("School", mutableListOf(task_6, task_7))
             val group_3 = Group ("Trip", mutableListOf(task_4))
             val group_4 = Group ("Party", mutableListOf(task_3, task_8))
