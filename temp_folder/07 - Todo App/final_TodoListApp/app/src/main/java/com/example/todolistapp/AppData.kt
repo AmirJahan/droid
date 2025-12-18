@@ -5,7 +5,6 @@ class AppData
     companion object DataHolder
     {
         var groups: MutableList<Group> = mutableListOf()
-
         fun initialize ()
         {
             val item1 = Item ("Bread", false)

@@ -16,7 +16,6 @@ class ItemsActivity : AppCompatActivity(), OnItemClickListener
     lateinit var thisGroup: Group
     var itemsAdapter: ItemsAdapter? = null
 
-
     override fun itemClicked(index: Int)
     {
         thisGroup.items[index].completed = !thisGroup.items[index].completed
@@ -55,8 +54,7 @@ class ItemsActivity : AppCompatActivity(), OnItemClickListener
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayShowTitleEnabled(false)
         }
-
-
+        
         val newItemEditText = findViewById<EditText>(R.id.newItemEditText)
 
         newItemEditText.setOnKeyListener { view, keyCode, event ->

@@ -30,7 +30,6 @@
             android:text="TextView"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
-
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
