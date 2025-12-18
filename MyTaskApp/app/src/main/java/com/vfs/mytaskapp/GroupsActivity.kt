@@ -27,6 +27,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class GroupsActivity : AppCompatActivity()
 {
+    lateinit var groupAdapter: GroupsAdapter
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -37,12 +38,18 @@ class GroupsActivity : AppCompatActivity()
 
         val groupsRv = findViewById<RecyclerView>(R.id.groupsRv_id)
         groupsRv.layoutManager = LinearLayoutManager(this)
-        groupsRv.adapter = GroupsAdapter()
 
+        groupAdapter = GroupsAdapter()
+        groupsRv.adapter = groupAdapter
     }
 
     fun addNewGroup(v: View)
     {
+        val name = "test"
+
+        val newGroup = Group (name, mutableListOf())
+        AppData.groups.add(newGroup)
+        groupAdapter.notifyDataSetChanged()
 
     }
 }
