@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -45,12 +47,25 @@ class GroupsActivity : AppCompatActivity()
 
     fun addNewGroup(v: View)
     {
-        val name = "test"
+        val builder = AlertDialog.Builder(this)
 
-        val newGroup = Group (name, mutableListOf())
-        AppData.groups.add(newGroup)
-        groupAdapter.notifyDataSetChanged()
+        builder.setTitle("New Group")
+        builder.setMessage("Enter a name for your new group")
 
+        val nameEditText = EditText(this)
+        builder.setView(nameEditText)
+
+        builder.setPositiveButton("Add") {_, _ ->
+            val newGroup = Group (nameEditText.text.toString(),
+                                  mutableListOf())
+            AppData.groups.add(newGroup)
+            groupAdapter.notifyDataSetChanged()
+        }
+
+        builder.setNegativeButton("Cancel") { _, _ -> }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 }
 
