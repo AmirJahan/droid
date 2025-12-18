@@ -54,7 +54,7 @@ class ItemsActivity : AppCompatActivity(), OnItemClickListener
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayShowTitleEnabled(false)
         }
-        
+
         val newItemEditText = findViewById<EditText>(R.id.newItemEditText)
 
         newItemEditText.setOnKeyListener { view, keyCode, event ->
